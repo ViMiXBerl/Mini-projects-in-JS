@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Source+Sans+Pro:wght@600&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Dancing Script", cursive;
+	overflow: hidden;
+	margin: 0;
+	/* background: rgba(172, 128, 93, 0.884); */
+	background: linear-gradient(217deg, rgba(172, 128, 93, 0.884), #fff);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	padding: 0 20px;
+}
+
+.slide {
+	position: relative;
+	height: 80vh;
+	border-radius: 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: #fff;
+	flex: 1;
+	/* для пропорционального растягивания элементов, если для какого-либо слайда указать большее значение, будет соответствующее изменение */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+	position: absolute;
+	font-size: 24px;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+	/* непрозрачность элемента в данном случае 0- прозрачный */
+	/* для того, чтобы анимировать заголовки слайдов */
+}
+
+.slide.active {
+	flex: 10;
+}
+
+.slide.active h3 {
+	opacity: 1;
+	/* какое свойство анимируем, за сколько секунд, какая функция */
+	transition: opacity 0.3s ease-in 0.4s;
+}
